@@ -23,10 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         console.log('convertedValue:', convertedValue);
         const result = eval(convertedValue);
-        currentValue = result.toString();
-        display.value = currentValue;
+        const resultString = result.toString();
+        display.value = currentValue + " = " + resultString;
 
-        display.value += " = " + currentValue;
+        currentValue = resultString;
     }
 
     for (let i = 0; i < buttons.length; i++) {
@@ -46,10 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     display.value = currentValue;
                 }
             } catch (error) {
-                    console.error(error);
-                    currentValue = "ERROR";
-                    display.value = currentValue;
-                }
-            })
+                console.error(error);
+                currentValue = "ERROR";
+                display.value = currentValue;
+            }
+        })
     }
 });
