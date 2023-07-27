@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const result = eval(convertedValue);
         currentValue = result.toString();
         display.value = currentValue;
+
+        display.value += " = " + currentValue;
     }
 
     for (let i = 0; i < buttons.length; i++) {
